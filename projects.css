@@ -1,0 +1,189 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:linear-gradient(135deg,#0a192f,#112240);
+    color:#ccd6f6;
+    min-height:100vh;
+    overflow-x:hidden;
+}
+
+/* ================= NAVBAR ================= */
+
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 60px;
+}
+
+.logo{
+    font-size:40px;
+    font-weight:bold;
+    color:#64ffda;
+    letter-spacing:3px;
+}
+
+.navbar a{
+    text-decoration:none;
+    color:#ccd6f6;
+    font-size:18px;
+    transition:0.3s;
+}
+
+.navbar a:hover{
+    color:#64ffda;
+}
+
+/* ================= PROJECT SECTION ================= */
+
+.projects-section{
+    width:90%;
+    max-width:1200px;
+    margin:50px auto;
+}
+
+.projects-section h1{
+    text-align:center;
+    font-size:50px;
+    color:#64ffda;
+    margin-bottom:20px;
+}
+
+.subtitle{
+    text-align:center;
+    font-size:18px;
+    color:#8892b0;
+    margin-bottom:50px;
+    line-height:1.7;
+}
+
+/* ================= GRID ================= */
+
+.projects-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:30px;
+}
+
+/* ================= PROJECT CARD ================= */
+
+.project-card{
+    background:rgba(255,255,255,0.08);
+    backdrop-filter:blur(12px);
+    border:1px solid rgba(255,255,255,0.15);
+    border-radius:20px;
+    padding:30px;
+    box-shadow:0 8px 20px rgba(0,0,0,0.25);
+    transition:all .4s ease;
+}
+
+.project-card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 15px 35px rgba(100,255,218,0.25);
+}
+
+.project-card h2{
+    color:#64ffda;
+    margin-bottom:20px;
+}
+
+.project-card p{
+    line-height:1.8;
+    margin-bottom:20px;
+}
+
+.project-card h4{
+    margin-bottom:15px;
+    color:#64ffda;
+}
+
+/* ================= TECHNOLOGY TAGS ================= */
+
+.tech{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-bottom:25px;
+}
+
+.tech span{
+    background:#64ffda;
+    color:#0a192f;
+    padding:8px 15px;
+    border-radius:20px;
+    font-size:14px;
+    font-weight:bold;
+}
+
+/* ================= BUTTONS ================= */
+
+.buttons{
+    display:flex;
+    gap:15px;
+}
+
+.buttons a{
+    text-decoration:none;
+    padding:12px 20px;
+    border-radius:8px;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.buttons a:first-child{
+    background:#64ffda;
+    color:#0a192f;
+}
+
+.buttons a:last-child{
+    border:2px solid #64ffda;
+    color:#64ffda;
+}
+
+.buttons a:hover{
+    transform:scale(1.05);
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:900px){
+
+    .projects-grid{
+        grid-template-columns:1fr;
+    }
+
+}
+
+@media(max-width:768px){
+
+    .navbar{
+        flex-direction:column;
+        gap:15px;
+    }
+
+    .logo{
+        font-size:30px;
+    }
+
+    .projects-section h1{
+        font-size:38px;
+    }
+
+    .subtitle{
+        font-size:16px;
+    }
+
+    .buttons{
+        flex-direction:column;
+    }
+
+    .buttons a{
+        text-align:center;
+    }
+
+}
