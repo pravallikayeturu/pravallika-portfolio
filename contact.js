@@ -1,3 +1,4 @@
+
 const cards = document.querySelectorAll(".contact-card");
 
 window.addEventListener("load", () => {
@@ -36,6 +37,7 @@ cards.forEach(card => {
 
 });
 
+
 /* ================= CONTACT FORM ================= */
 
 const form = document.getElementById("contactForm");
@@ -55,17 +57,18 @@ form.addEventListener("submit", async function(event) {
 
     try {
 
-        const response = await fetch("https://pravallika-portfoliobackend.onrender.com/api/contact", {
+        const response = await fetch(
+            "https://pravallika-portfoliobackend.onrender.com/api/contact",
+            {
+                method: "POST",
 
-            method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
 
-            headers: {
-                "Content-Type": "application/json"
-            },
-
-            body: JSON.stringify(contact)
-
-        });
+                body: JSON.stringify(contact)
+            }
+        );
 
         console.log("Status:", response.status);
 
@@ -78,15 +81,13 @@ form.addEventListener("submit", async function(event) {
 
         form.reset();
 
-    }
-    catch (error) {
+    } catch (error) {
 
         console.error("Full Error:", error);
 
-        alert(error);
-
         document.getElementById("responseMessage").style.color = "red";
-        document.getElementById("responseMessage").innerHTML = "Unable to connect to backend.";
+        document.getElementById("responseMessage").innerHTML =
+            "Unable to connect to backend.";
 
     }
 
